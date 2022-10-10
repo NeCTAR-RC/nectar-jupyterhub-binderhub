@@ -1,0 +1,360 @@
+/* Use ARDC Proxima Nova */
+@import url("https://use.typekit.net/nlr0joz.css");
+
+body {
+    padding-top: 80px; /* needed when nav has .navbar-fixed-top class */
+    font-family: proxima-nova, sans-serif;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, 
+h1, h2, h3, h4, h5, h6 {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 { 
+  font-size: 1rem;
+  text-transform: none;
+}
+
+a, .a-link {
+  color: {{ info_color | default("#666666") }};
+  text-decoration: underline;
+  /*filter: brightness(0.95);*/
+}
+
+a.no-filter {
+  filter: unset;
+}
+
+a:focus,
+a:hover,
+a:active,
+.a-link:focus,
+.a-link:hover,
+.a-link:active {
+  color: {{ info_color | default("#666666") }};
+  filter: brightness(0.85);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, filter .15s ease-in-out;
+  cursor:  pointer !important;
+}
+
+.btn {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: proxima-nova, sans-serif;
+  letter-spacing: 1px;
+  text-shadow:  none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  /* padding: 0.375rem 0.75rem; */
+  /* border-radius: 0.25rem; */
+  border: none;
+  background: none;
+  box-shadow: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, filter .15s ease-in-out;
+}
+
+.bg-primary {
+  background-color: {{ primary_color | default("#666666") }} !important;
+}
+
+.bg-secondary {
+  background-color: {{ secondary_color | default("#666666") }} !important;
+}
+
+.bg-danger {
+  background-color: {{ danger_color | default("#666666") }}) !important;
+}
+
+.bg-warning {
+  background-color: {{ warning_color | default("#666666") }} !important;
+}
+
+.bg-info {
+  background-color: {{ info_color | default("#666666") }} !important;
+}
+
+.bg-success {
+  background-color: {{ success_color | default("#666666") }} !important;
+}
+
+.text-primary {
+  color: {{ primary_color | default("#666666") }} !important;
+}
+
+.text-secondary {
+  color: {{ secondary_color | default("#666666") }} !important;
+}
+
+.text-danger {
+  color: {{ danger_color | default("#666666") }} !important;
+}
+
+.text-warning {
+  color: {{ warning_color | default("#666666") }} !important;
+}
+
+.text-info {
+  color: {{ info_color | default("#666666") }} !important;
+}
+
+.text-success {
+  color: {{ success_color | default("#666666") }} !important;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: {{ primary_color | default("#666666") }};
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, filter .15s ease-in-out;
+}
+
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  color: {{ primary_color | default("#666666") }};
+  background:  none;
+  filter: brightness(0.85);
+}
+
+.btn-primary {
+  color: #000;
+  background-color: {{ primary_color | default("#666666") }} !important;
+  border-color: {{ primary_color | default("#666666") }} !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #000;
+  background-color: {{ primary_color | default("#666666") }} !important;
+  border-color: {{ primary_color | default("#666666") }} !important;
+  filter: brightness(0.85);
+}
+
+.btn-secondary {
+  color: #000;
+  background-color: {{ secondary_color | default("#666666") }};
+  border-color: {{ secondary_color | default("#666666") }};
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  color: #000;
+  background-color: {{ secondary_color | default("#666666") }};
+  border-color: {{ secondary_color | default("#666666") }};
+  filter: brightness(0.85);
+}
+
+.btn-danger {
+  color: #000;
+  background-color: {{ danger_color | default("#666666") }};
+  border-color: {{ danger_color | default("#666666") }};
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+  color: #000;
+  background-color: {{ danger_color | default("#666666") }};
+  border-color: {{ danger_color | default("#666666") }};
+  filter: brightness(0.85);
+}
+
+.btn-warning {
+  color: #000;
+  background-color: {{ warning_color | default("#666666") }};
+  border-color: {{ warning_color | default("#666666") }};
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
+  color: #000;
+  background-color: {{ warning_color | default("#666666") }};
+  border-color: {{ warning_color | default("#666666") }};
+  filter: brightness(0.85);
+}
+
+.btn-info {
+  color: #000;
+  background-color: {{ info_color | default("#666666") }};
+  border-color: {{ info_color | default("#666666") }};
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+  color: #000;
+  background-color: {{ info_color | default("#666666") }};
+  border-color: {{ info_color | default("#666666") }};
+  filter: brightness(0.85);
+}
+
+.btn-success {
+  color: #000;
+  background-color: {{ success_color | default("#666666") }};
+  border-color: {{ success_color | default("#666666") }};
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+  color: #000;
+  background-color: {{ success_color | default("#666666") }};
+  border-color: {{ success_color | default("#666666") }};
+  filter: brightness(0.85);
+}
+
+.alert-info {
+    color: {{ info_color | default("#666666") }};
+    background-color: #CCFFFF;
+    border-color: #99FFFF;
+}
+
+.navbar-inverse {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.navbar-inverse a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar #jupyterhub-logo a {
+  font-size: 1.25em;
+}
+
+.navbar #jupyterhub-logo a img {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.navbar #login_widget .btn {
+  border: 1px solid #fff;
+}
+
+.btn-jupyter {
+  background-color: {{ primary_color | default("#666666") }} !important;
+  border-color: {{ primary_color | default("#666666") }} !important;
+}
+
+#login-main .service-login {
+    vertical-align: top !important;
+    padding-top: 60px;
+}
+
+.footer {
+  background: #000;
+  color: white;
+  padding: 30px 0;
+  width: 100%;
+  border: none;
+  margin-top: 0;
+}
+
+.footer h4 {
+  color: white;
+  text-transform:  uppercase;
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+  line-height: 1.2;
+}
+
+.footer h4:after {
+  content: "";
+  background: #fff;
+  height: 2px;
+  display: block;
+  margin-top: 10px;
+  max-width: 50px;
+}
+.row.footer-about {
+  margin-bottom: 15px;
+}
+.footer .footer-text a {
+  color: #F8B20E;
+}
+.footer-logos {
+  display: table;
+  vertical-align: bottom;
+}
+.footer-logos .footer-logo-ardc {
+  display: table-cell;
+  width: 60%;
+  padding: 5px;
+}
+.footer-logos .footer-logo-ncris {
+  display: table-cell;
+  width: 40%;
+  padding: 5px;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer a {
+  margin: 0;
+}
+
+@media (min-width: 480px) {
+  .navbar-nav {
+    margin: 20px 0;
+  }
+}
+
+@media (min-width: 720px) {
+  .row.footer-about {
+    display: flex;
+    align-items: end;
+    margin-bottom: 30px;
+  }
+  .row.footer-text {
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 45em) {
+  .footer-links {
+    text-align:  unset;
+  }
+  /* .footer a,
+  .footer a:hover {
+    box-shadow: unset;
+    border-radius: unset;
+    background: unset;
+    padding: unset;
+    line-height: inherit;
+    display: unset;
+    margin: 0;
+  } 
+  */
+}

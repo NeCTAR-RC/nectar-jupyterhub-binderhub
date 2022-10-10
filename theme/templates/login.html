@@ -1,0 +1,15 @@
+{% extends "templates/login.html" %} {% set announcement = '' %}
+{% block main %}
+    <section class="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-8 col-lg-offset-2 text-center">
+                    <h1 class="display-5 my-4">Welcome to the <br /><span class="fw-bold">ARDC Nectar Research Cloud<br />JupyterHub Service</span></h1>
+                    <h4 class="text-secondary">This <em>JupyterHub</em> is a service of the <a href="https://ardc.edu.au/">Australian Research Data Commons (ARDC)</a> and utilises the ARDC Nectar Research Cloud.</h4>
+                    <p class="mb-5">The Australian Research Data Commons (ARDC) is enabled by the National Collaborative Research Infrastructure Strategy Program (NCRIS).</p>
+                </div>
+            </div>
+        </div>
+        {{ super() }}
+    </section>
+{% endblock %}
