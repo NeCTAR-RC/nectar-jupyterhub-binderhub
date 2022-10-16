@@ -2,8 +2,14 @@
 @import url("https://use.typekit.net/nlr0joz.css");
 
 body {
-    padding-top: 80px; /* needed when nav has .navbar-fixed-top class */
-    font-family: proxima-nova, sans-serif;
+  padding-top: 80px; /* needed when nav has .navbar-fixed-top class */
+  font-family: proxima-nova, sans-serif;
+  color: #000;
+  background-color: #fcfcfc;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, 
@@ -36,6 +42,12 @@ h5 {
 h6 { 
   font-size: 1rem;
   text-transform: none;
+}
+
+.display-5 {
+  font-size: calc(1rem + 2.1vw);
+  font-weight: 300;
+  line-height: 1.2;
 }
 
 a, .a-link {
@@ -140,6 +152,10 @@ a:active,
   color: {{ primary_color | default("#666666") }};
   background:  none;
   filter: brightness(0.85);
+}
+
+.btn-jupyter:hover {
+  color: #000; /* Override default theme styling */
 }
 
 .btn-primary {
@@ -262,14 +278,98 @@ a:active,
   border: 1px solid #fff;
 }
 
+.navbar-toggle {
+  margin-top: 23px;
+  margin-bottom: 23px;
+}
+
 .btn-jupyter {
   background-color: {{ primary_color | default("#666666") }} !important;
   border-color: {{ primary_color | default("#666666") }} !important;
 }
 
-#login-main .service-login {
-    vertical-align: top !important;
-    padding-top: 60px;
+.main.container {
+  padding: 60px 0;
+}
+
+.svg-img {
+  margin: 30px 0;
+}
+
+section.welcome {
+  width:  100%;
+  overflow: hidden;
+}
+
+#welcome-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#welcome-bg {
+  position:  relative;
+  bottom:  0;
+  z-index:  -1;
+  margin-top:  -8vw;
+  margin-bottom:  -1vw;
+  margin-left:  -2vw;
+  margin-right:  -2vw;
+}
+
+#welcome-bg #data-visuals > g,
+#welcome-bg #data-visuals > path {
+  opacity: 0;
+  animation: fadeIn 0.5s linear 5s forwards;
+}
+#welcome-bg #data-visuals > g:nth-child(1) { animation-delay: 5s }
+#welcome-bg #data-visuals > g:nth-child(2) { animation-delay: 5.2s }
+#welcome-bg #data-visuals > g:nth-child(3) { animation-delay: 5.4s }
+#welcome-bg #data-visuals > g:nth-child(4) { animation-delay: 5.6s }
+#welcome-bg #data-visuals > g:nth-child(5) { animation-delay: 5.8s }
+#welcome-bg #data-visuals > g:nth-child(6) { animation-delay: 6s }
+#welcome-bg #data-visuals > g:nth-child(7) { animation-delay: 6.2s }
+#welcome-bg #data-visuals > g:nth-child(8) { animation-delay: 6.4s }
+#welcome-bg #data-visuals > path:nth-child(1) { animation-delay: 6.6s }
+#welcome-bg #data-visuals > path:nth-child(2) { animation-delay: 6.8s }
+
+#welcome-bg #code g {
+  opacity: 0;
+  animation: fadeIn 1s linear 5s forwards;
+}
+
+#welcome-bg #code-lines line,
+#welcome-bg #code-lines polyline,
+#welcome-bg #code-lines path,
+#welcome-bg #code-lines g {
+  opacity: 0;
+  animation: fadeIn 1s linear 4s forwards;
+}
+
+#welcome-bg #users g {
+  opacity: 0;
+  animation: fadeIn 0.5s linear forwards;
+}
+#welcome-bg #users > g:nth-child(1) { animation-delay: 0.5s }
+#welcome-bg #users > g:nth-child(2) { animation-delay: 1s }
+#welcome-bg #users > g:nth-child(3) { animation-delay: 1.5s }
+#welcome-bg #users > g:nth-child(4) { animation-delay: 2s }
+#welcome-bg #users > g:nth-child(5) { animation-delay: 2.5s }
+#welcome-bg #users > g:nth-child(6) { animation-delay: 3s }
+#welcome-bg #users > g:nth-child(7) { animation-delay: 3.5s }
+
+#welcome-bg #users-lines line {
+  opacity: 0;
+  stroke-dasharray: 12 14;
+  stroke-dashoffset: 1000;
+  animation: fadeIn 0.2s linear 4s forwards, drawDashed 20s linear 4s infinite;
+}
+
+#login-main {
+  height: auto;
+}
+
+.progress-bar {
+  background-color: {{ accent_color | default("#969696") }};
 }
 
 .footer {
@@ -342,6 +442,18 @@ a:active,
   }
 }
 
+@media (max-width: 991px) {
+  body {
+    padding-top: 0;
+  }
+  .navbar-fixed-top {
+    position: relative;
+  }
+  .navbar-text {
+    display: none;
+  }
+}
+
 @media (max-width: 45em) {
   .footer-links {
     text-align:  unset;
@@ -357,4 +469,18 @@ a:active,
     margin: 0;
   } 
   */
+}
+
+@keyframes drawDashed {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

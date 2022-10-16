@@ -18,7 +18,7 @@
       {% block logo %}
         <span id="jupyterhub-logo">
           <a class="href="{{ base_url }}">
-            <img src="{{ base_url }}custom/images/ardc_nectar_research_cloud.svg" height="60" alt="JupyterHub" title="Home" /> JupyterHub Service
+            <img src="{{ base_url }}custom/images/ardc_nectar_research_cloud.svg" height="60" alt="JupyterHub" title="Home" /> Jupyter Service
           </a>
         </span>
       {% endblock %}
@@ -74,10 +74,8 @@
 {% endif %}
 {% endblock %}
 
-<div class="main-section">
-  {% block main %}
-  {% endblock %}
-</div>
+{% block main %}
+{% endblock %}
 
 
 {% block footer %}
