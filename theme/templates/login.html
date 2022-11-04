@@ -3,7 +3,7 @@
     <section class="welcome">
         <div class="container">
             <div class="row">
-                <div id="welcome-text" class="col-sm-12 col-lg-8 col-lg-offset-2 text-center">
+                <div id="welcome-text" class="col-sm-12 col-lg-10 col-lg-offset-1 text-center">
                     <h1 class="display-5">Welcome to the <br /><strong>ARDC Nectar Research Cloud<br />Jupyter Notebook Service</strong>.</h1>
                     <h3 class="text-secondary">This is a service of the <a href="https://ardc.edu.au/">Australian Research Data Commons (ARDC)</a> and utilises the ARDC Nectar Research Cloud.</h3>
                 </div>
@@ -719,4 +719,15 @@
             </g>
         </svg>
     </section>
+{% endblock %}
+
+{% block script %}
+{{ super() }}
+<script type="text/javascript">
+  require(["jquery"], function($) {
+    setTimeout(function(){
+      $("#welcome-bg #users-lines line").addClass("paused");
+    }, 60000);
+  });
+</script>
 {% endblock %}

@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, 
+.h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6 {
   font-family: proxima-nova, sans-serif;
   font-weight: 600;
@@ -39,7 +39,7 @@ h5 {
   font-size: 1.25rem;
 }
 
-h6 { 
+h6 {
   font-size: 1rem;
   text-transform: none;
 }
@@ -368,8 +368,68 @@ section.welcome {
   height: auto;
 }
 
+.worker-loader {
+  background-image: url("/hub/custom/images/bee-loader.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  animation: spinLoader 4s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@include media-breakpoint-down(sm) {
+  .worker-loader {
+    width: 90px;
+    height: 90px;
+  }
+}
+
 .progress-bar {
   background-color: {{ accent_color | default("#969696") }};
+}
+
+#kubespawner-profiles-list .profile {
+  display: flex;
+  align-items: center;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+}
+
+label[for=profile-item-standard-environment] div.radio::after {
+  content: '';
+  background-image: url('/hub/custom/images/environment-standard.svg');
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+label[for=profile-item-datascience-environment] div.radio::after {
+  content: '';
+  background-image: url('/hub/custom/images/environment-datascience.svg');
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+label[for=profile-item-scipy-environment] div.radio::after {
+  content: '';
+  background-image: url('/hub/custom/images/environment-scipy.svg');
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+label[for=profile-item-r-environment] div.radio::after {
+  content: '';
+  background-image: url('/hub/custom/images/environment-r.svg');
+  display: inline-block;
+  width: 100px;
+  height: 100px;
 }
 
 .footer {
@@ -467,8 +527,12 @@ section.welcome {
     line-height: inherit;
     display: unset;
     margin: 0;
-  } 
+  }
   */
+}
+
+.paused {
+  animation-play-state: paused !important;
 }
 
 @keyframes drawDashed {
@@ -483,4 +547,10 @@ section.welcome {
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+@keyframes spinLoader {
+  to {
+      transform:rotate(360deg);
+  }
 }
