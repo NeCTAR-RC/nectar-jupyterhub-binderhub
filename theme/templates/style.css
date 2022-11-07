@@ -400,36 +400,31 @@ section.welcome {
   align-items: center;
 }
 
-label[for=profile-item-standard-environment] div.radio::after {
+label div.radio::after {
   content: '';
-  background-image: url('/hub/custom/images/environment-standard.svg');
+  background-image: url('/hub/custom/images/environment-default.svg');
+  background-position: center;
+  background-repeat: no-repeat;
   display: inline-block;
   width: 100px;
   height: 100px;
+  margin-left: 5px;
+}
+
+label[for=profile-item-standard-environment] div.radio::after {
+  background-image: url('/hub/custom/images/environment-standard.svg');
 }
 
 label[for=profile-item-datascience-environment] div.radio::after {
-  content: '';
   background-image: url('/hub/custom/images/environment-datascience.svg');
-  display: inline-block;
-  width: 100px;
-  height: 100px;
 }
 
 label[for=profile-item-scipy-environment] div.radio::after {
-  content: '';
   background-image: url('/hub/custom/images/environment-scipy.svg');
-  display: inline-block;
-  width: 100px;
-  height: 100px;
 }
 
 label[for=profile-item-r-environment] div.radio::after {
-  content: '';
   background-image: url('/hub/custom/images/environment-r.svg');
-  display: inline-block;
-  width: 100px;
-  height: 100px;
 }
 
 .footer {
