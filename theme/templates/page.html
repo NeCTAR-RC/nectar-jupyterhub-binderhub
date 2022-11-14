@@ -17,8 +17,11 @@
     <div class="navbar-header">
       {% block logo %}
         <span id="jupyterhub-logo">
-          <a class="href="{{ base_url }}">
-            <img src="{{ base_url }}custom/images/ardc_nectar_research_cloud.svg" height="60" alt="JupyterHub" title="Home" /> Jupyter Notebook Service
+          <a id="nectar-logo" href="{{ base_url }}">
+            <img src="{{ base_url }}custom/images/ardc_nectar_research_cloud.svg" height="60" alt="ARDC Nectar Research Cloud" title="Home" /> Jupyter Notebook Service
+          </a>
+          <a id="nectar-symbol" href="{{ base_url }}">
+            <img src="{{ base_url }}custom/images/nectar-icon.svg" height="60" alt="ARDC Nectar Research Cloud" title="Home" />
           </a>
         </span>
       {% endblock %}
@@ -33,10 +36,13 @@
     </div>
 
     <div class="collapse navbar-collapse" id="thenavbar">
-      {% if user %}
-        <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav">
+        
+        {% if user %}
           {% block nav_bar_left_items %}
             <li><a href="{{ base_url }}home{% if cdsdashboards_restricted %}-cds{% endif %}">Home</a></li>
+            <li><a href="https://support.ehelp.edu.au/a/solutions/articles/6000261095">About</a></li>
+            <li><a href="https://support.ehelp.edu.au">Help</a></li>
             <li><a href="{{ base_url }}token">Token</a></li>
             {% if services %}
               <li class="dropdown">
@@ -52,8 +58,10 @@
             <li><a href="{{ base_url }}admin">Admin</a></li>
             {% endif %}
           {% endblock %}
-        </ul>
-      {% endif %}
+        {% else %}
+          <li><a href="https://support.ehelp.edu.au/a/solutions/articles/6000261095">About</a></li>
+        {% endif %}
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         {% block nav_bar_right_items %}
           {{ super() }}
