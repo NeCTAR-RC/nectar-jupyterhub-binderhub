@@ -435,6 +435,10 @@ label[for=profile-item-r-environment] div.radio::after {
   background-image: url('/hub/custom/images/environment-r.svg');
 }
 
+label[for=profile-item-agrefed-environment] div.radio::after {
+  background-image: url('/hub/custom/images/environment-agrefed.svg');
+}
+
 .footer {
   background: #000;
   color: white;
