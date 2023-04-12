@@ -1,5 +1,5 @@
 [gerrit]
 host=review.rc.nectar.org.au
 port=29418
-project=NeCTAR-RC/nectar-jupyterhub.git
+project=NeCTAR-RC/nectar-jupyterhub-binderhub.git
 defaultbranch=master
