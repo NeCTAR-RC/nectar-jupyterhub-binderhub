@@ -1,4 +1,4 @@
-PROJECT=jupyterhub
+PROJECT=jupyterhub-binderhub
 REPO=registry.rc.nectar.org.au/nectar
 
 SHA=$(shell git rev-parse --verify --short HEAD)
