@@ -18,7 +18,7 @@
       {% block logo %}
         <span id="jupyterhub-logo">
           <a id="nectar-logo" href="{{ base_url }}">
-            <img src="{{ base_url }}custom/images/ardc_nectar_research_cloud.svg" height="60" alt="ARDC Nectar Research Cloud" title="Home" /> Jupyter Notebook Service
+            <img src="{{ base_url }}custom/images/ardc_nectar_research_cloud.svg" height="60" alt="ARDC Nectar Research Cloud" title="Home" /> BinderHub Service
           </a>
           <a id="nectar-symbol" href="{{ base_url }}">
             <img src="{{ base_url }}custom/images/nectar-icon.svg" height="60" alt="ARDC Nectar Research Cloud" title="Home" />
@@ -38,12 +38,10 @@
     <div class="collapse navbar-collapse" id="thenavbar">
       <ul class="nav navbar-nav">
         
-        {% if user %}
           {% block nav_bar_left_items %}
-            <li><a href="{{ base_url }}home{% if cdsdashboards_restricted %}-cds{% endif %}">Home</a></li>
+            <li><a href="{{ binder_home }}">Home</a></li>
             <li><a href="https://support.ehelp.edu.au/a/solutions/articles/6000261095">About</a></li>
-            <li><a href="https://support.ehelp.edu.au">Help</a></li>
-            <li><a href="{{ base_url }}token">Token</a></li>
+            <li><a href="https://support.ehelp.edu.au">Support Centre</a></li>
             {% if services %}
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
@@ -55,12 +53,9 @@
               </li>
             {% endif %}
             {% if user.admin %}
-            <li><a href="{{ base_url }}admin">Admin</a></li>
+              <li><a href="{{ base_url }}admin">Admin</a></li>
             {% endif %}
           {% endblock %}
-        {% else %}
-          <li><a href="https://support.ehelp.edu.au/a/solutions/articles/6000261095">About</a></li>
-        {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% block nav_bar_right_items %}
@@ -82,9 +77,10 @@
 {% endif %}
 {% endblock %}
 
+<section id="main">
 {% block main %}
 {% endblock %}
-
+</section>
 
 {% block footer %}
 <footer class="footer bg-black text-white">
@@ -134,7 +130,7 @@
         <h4>Help</h4>
         <ul class="list-unstyled">
           <li><a href="https://support.ehelp.edu.au/support/tickets/new" target="_blank">Request Support</a></li>
-          <li><a href="https://support.ehelp.edu.au/support/home/#chat">Online Chat</a></li>
+          <li><a href="https://support.ehelp.edu.au/support/home#chat">Online Chat</a></li>
           <li><a href="https://tutorials.rc.nectar.org.au">Tutorials</a></li>
         </ul>
       </div>

@@ -257,6 +257,7 @@ a:active,
 .navbar-inverse {
     background-color: #000000;
     border-color: #000000;
+    background-image: none;
 }
 
 .navbar-inverse a {
@@ -292,7 +293,7 @@ a:active,
   border-color: {{ primary_color | default("#666666") }} !important;
 }
 
-.main.container {
+#main {
   padding: 60px 0;
 }
 
@@ -320,53 +321,103 @@ section.welcome {
   margin-right:  -2vw;
 }
 
-#welcome-bg #data-visuals > g,
-#welcome-bg #data-visuals > path {
+#welcome-bg #windows #github-window {
   opacity: 0;
-  animation: fadeIn 0.5s linear 5s forwards;
-}
-#welcome-bg #data-visuals > g:nth-child(1) { animation-delay: 5s }
-#welcome-bg #data-visuals > g:nth-child(2) { animation-delay: 5.2s }
-#welcome-bg #data-visuals > g:nth-child(3) { animation-delay: 5.4s }
-#welcome-bg #data-visuals > g:nth-child(4) { animation-delay: 5.6s }
-#welcome-bg #data-visuals > g:nth-child(5) { animation-delay: 5.8s }
-#welcome-bg #data-visuals > g:nth-child(6) { animation-delay: 6s }
-#welcome-bg #data-visuals > g:nth-child(7) { animation-delay: 6.2s }
-#welcome-bg #data-visuals > g:nth-child(8) { animation-delay: 6.4s }
-#welcome-bg #data-visuals > path:nth-child(1) { animation-delay: 6.6s }
-#welcome-bg #data-visuals > path:nth-child(2) { animation-delay: 6.8s }
-
-#welcome-bg #code g {
-  opacity: 0;
-  animation: fadeIn 1s linear 5s forwards;
+  animation: fadeIn 0.5s linear 1s forwards;
 }
 
-#welcome-bg #code-lines line,
-#welcome-bg #code-lines polyline,
-#welcome-bg #code-lines path,
-#welcome-bg #code-lines g {
-  opacity: 0;
-  animation: fadeIn 1s linear 4s forwards;
+#welcome-bg #windows #join1 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 0.5s linear 1.5s forwards;
 }
 
-#welcome-bg #users g {
+#welcome-bg #windows #binder-window {
   opacity: 0;
-  animation: fadeIn 0.5s linear forwards;
+  transform-origin: 50% 45%;
+  animation: fadeIn 0.5s linear 2s forwards, scaleUp 0.5s ease-in-out 3.5s forwards;
 }
-#welcome-bg #users > g:nth-child(1) { animation-delay: 0.5s }
+
+#welcome-bg #windows #join2 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 0.5s linear 2.5s forwards;
+}
+
+#welcome-bg #windows #jupyter-window {
+  opacity: 0;
+  animation: fadeIn 0.5s linear 3s forwards;
+}
+
+#welcome-bg #users #users-large > g,
+#welcome-bg #users #users-medium > g,
+#welcome-bg #users #users-small > g {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  animation: scaleIn 0.5s ease-in-out 4s forwards;
+}
+
+#welcome-bg #users #users-large > g:nth-child(1) { animation-delay: 4s; }
+#welcome-bg #users #users-large > g:nth-child(2) { animation-delay: 4.1s; }
+#welcome-bg #users #users-large > g:nth-child(3) { animation-delay: 4.2s; }
+#welcome-bg #users #users-large > g:nth-child(4) { animation-delay: 4.3s; }
+#welcome-bg #users #users-large > g:nth-child(5) { animation-delay: 4.4s; }
+
+#welcome-bg #users #users-medium > g > g:nth-child(1) { animation-delay: 4.5s; }
+#welcome-bg #users #users-medium > g > g:nth-child(2) { animation-delay: 4.6s; }
+#welcome-bg #users #users-medium > g > g:nth-child(3) { animation-delay: 4.7s; }
+#welcome-bg #users #users-medium > g > g:nth-child(4) { animation-delay: 4.8s; }
+#welcome-bg #users #users-medium > g > g:nth-child(5) { animation-delay: 4.9s; }
+#welcome-bg #users #users-medium > g > g:nth-child(6) { animation-delay: 5s; }
+#welcome-bg #users #users-medium > g > g:nth-child(7) { animation-delay: 5.1s; }
+
+#welcome-bg #users #users-small > g:nth-child(1) { animation-delay: 5.2s; }
+#welcome-bg #users #users-small > g:nth-child(2) { animation-delay: 5.3s; }
+
+#welcome-bg #user-lines line,
+#welcome-bg #user-lines polyline,
+#welcome-bg #user-lines polygon {
+  opacity: 0;
+  stroke-dasharray: 12 14;
+  stroke-dashoffset: 4;
+  animation: fadeIn 0.2s linear 5.5s forwards, drawDashed 30s linear 5.5s infinite;
+}
+
+#welcome-bg #code > g {
+  opacity: 0;
+  animation: fadeIn 0.5s linear 6s forwards;
+}
+
+#welcome-bg #code > g:nth-child(1) { animation-delay: 6s }
+#welcome-bg #code > g:nth-child(2) { animation-delay: 6.2s }
+#welcome-bg #code > g:nth-child(3) { animation-delay: 6.4s }
+#welcome-bg #code > g:nth-child(4) { animation-delay: 6.6s }
+#welcome-bg #code > g:nth-child(5) { animation-delay: 6.8s }
+#welcome-bg #code > g:nth-child(6) { animation-delay: 7s }
+#welcome-bg #code > g:nth-child(7) { animation-delay: 7.2s }
+
+#clouds path:nth-child(1),
+#clouds path:nth-child(3),
+#clouds path:nth-child(5) {
+  transform: translateX(-30%);
+  animation: moveClouds 61s linear infinite;
+}
+
+#clouds path:nth-child(2),
+#clouds path:nth-child(4),
+#clouds path:nth-child(6) {
+  transform: translateX(-70%);
+  animation: moveClouds 61s linear infinite;
+}
+
+/* #welcome-bg #users > g:nth-child(1) { animation-delay: 0.5s }
 #welcome-bg #users > g:nth-child(2) { animation-delay: 1s }
 #welcome-bg #users > g:nth-child(3) { animation-delay: 1.5s }
 #welcome-bg #users > g:nth-child(4) { animation-delay: 2s }
 #welcome-bg #users > g:nth-child(5) { animation-delay: 2.5s }
 #welcome-bg #users > g:nth-child(6) { animation-delay: 3s }
-#welcome-bg #users > g:nth-child(7) { animation-delay: 3.5s }
-
-#welcome-bg #users-lines line {
-  opacity: 0;
-  stroke-dasharray: 12 14;
-  stroke-dashoffset: 1000;
-  animation: fadeIn 0.2s linear 4s forwards, drawDashed 20s linear 4s infinite;
-}
+#welcome-bg #users > g:nth-child(7) { animation-delay: 3.5s } */
 
 #login-main {
   height: auto;
@@ -391,7 +442,7 @@ section.welcome {
 }
 
 .progress-bar {
-  background-color: {{ accent_color | default("#969696") }};
+  background-color: {{ warning_color | default("#969696") }};
 }
 
 #kubespawner-profiles-list .profile {
@@ -433,10 +484,6 @@ label[for=profile-item-scipy-environment] div.radio::after {
 
 label[for=profile-item-r-environment] div.radio::after {
   background-image: url('/hub/custom/images/environment-r.svg');
-}
-
-label[for=profile-item-agrefed-environment] div.radio::after {
-  background-image: url('/hub/custom/images/environment-agrefed.svg');
 }
 
 .footer {
@@ -551,6 +598,15 @@ label[for=profile-item-agrefed-environment] div.radio::after {
   animation-play-state: paused !important;
 }
 
+@keyframes draw {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes drawDashed {
   from {
     stroke-dashoffset: 1000;
@@ -563,6 +619,21 @@ label[for=profile-item-agrefed-environment] div.radio::after {
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(1); }
+  to   { transform: scale(1.5); }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0);}
+  50% { transform: scale(1.2);}
+	100% { transform: scale(1); }
+}
+
+@keyframes moveClouds {
+	to { transform: translateX(0); }
 }
 
 @keyframes spinLoader {

@@ -8,6 +8,7 @@ c.JupyterHub.extra_handlers = [
 ]
 
 c.JupyterHub.template_vars = {
+    'binder_home': 'https://binder.test.rc.nectar.org.au/',
     'primary_color': '#F8B20E',
     'secondary_color': '#969696',
     'accent_color': '#8E489B',
