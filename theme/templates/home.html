@@ -87,7 +87,7 @@
             Return to Home
           </a>
         {% else %}
-          <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ url }}"></a>
+          <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ url }}">
             Go To My Server
           </a>
         {% endif %}
@@ -173,7 +173,9 @@
         if(currentValue === "none") {
           $("#server-state").find("svg").hide();
           $("#server-state").find("h1").text("Your server is offline.");
-          $("#start").html("<i class='fa fa-power-off'></i> Start My Server");
+          $("#server-state").append("<p>You will need to relaunch your server on the BinderHub home page.</p>");
+          $("#start").attr("href", {{ binder_home }});
+          $("#start").html("Return to Home");
         }
       });
     });
