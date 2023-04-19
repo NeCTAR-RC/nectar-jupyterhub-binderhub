@@ -279,6 +279,10 @@ a:active,
   margin-bottom: 10px;
 }
 
+.navbar-text {
+  display: none;
+}
+
 .navbar #login_widget .btn {
   border: 1px solid #fff;
 }
@@ -562,9 +566,6 @@ label[for=profile-item-r-environment] div.radio::after {
   }
   .navbar-fixed-top {
     position: relative;
-  }
-  .navbar-text {
-    display: none;
   }
 }
 
