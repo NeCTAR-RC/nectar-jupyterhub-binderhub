@@ -19,11 +19,8 @@
     <div class="navbar-header">
       {% block logo %}
         <span id="jupyterhub-logo">
-          <a id="nectar-logo" href="{{ base_url }}">
+          <a id="nectar-logo" href="{{ binderhub_home }}">
             <img src="{{ base_url }}custom/images/ardc_nectar_research_cloud.svg" height="60" alt="ARDC Nectar Research Cloud" title="Home" /> BinderHub Service
-          </a>
-          <a id="nectar-symbol" href="{{ base_url }}">
-            <img src="{{ base_url }}custom/images/nectar-icon.svg" height="60" alt="ARDC Nectar Research Cloud" title="Home" />
           </a>
         </span>
       {% endblock %}
@@ -41,7 +38,7 @@
       <ul class="nav navbar-nav">
         
           {% block nav_bar_left_items %}
-            <li><a href="{{ binder_home }}">Home</a></li>
+            <li><a href="{{ binderhub_home }}">Home</a></li>
             <li><a href="https://support.ehelp.edu.au/support/solutions/articles/6000264526">About</a></li>
             <li><a href="https://support.ehelp.edu.au">Support Centre</a></li>
             {% if services %}
