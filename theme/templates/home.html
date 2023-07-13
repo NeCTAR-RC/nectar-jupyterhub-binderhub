@@ -83,7 +83,7 @@
         </a>
       {% endif %}
         {% if not default_server.active %}
-          <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ binder_home }}">
+          <a id="start" role="button" class="btn btn-lg btn-primary" href="{{ binderhub_home }}">
             Return to Home
           </a>
         {% else %}
@@ -174,7 +174,7 @@
           $("#server-state").find("svg").hide();
           $("#server-state").find("h1").text("Your server is offline.");
           $("#server-state").append("<p>You will need to relaunch your server on the BinderHub home page.</p>");
-          $("#start").attr("href", "{{ binder_home }}");
+          $("#start").attr("href", "{{ binderhub_home }}");
           $("#start").html("Return to Home");
         }
       });
