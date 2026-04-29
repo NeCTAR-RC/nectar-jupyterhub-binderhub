@@ -600,10 +600,22 @@ fieldset[disabled] .btn-danger.focus {
   filter: brightness(0.85);
 }
 
+.alert-primary {
+  color: #161616;
+  background-color: #F8F7FC;
+  border-color: #8E489B;
+}
+
 .alert-info {
-  color: {{ info_color | default("#666666") }};
-  background-color: #CCFFFF;
-  border-color: #99FFFF;
+  color: #161616;
+  background-color: #F8F7FC;
+  border-color: #8E489B;
+}
+
+.alert-warning {
+  color: #161616;
+  background-color: #FEF7E7;
+  border-color: #FCE09F;
 }
 
 /* Display utilities for brand text */
