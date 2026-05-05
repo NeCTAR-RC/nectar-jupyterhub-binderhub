@@ -1,9 +1,8 @@
 PROJECT=jupyterhub-binderhub
 REPO=registry.rc.nectar.org.au/nectar
 
-SHA=$(shell git rev-parse --verify --short HEAD)
-TAG_PREFIX=
-IMAGE_TAG := $(if $(TAG),$(TAG),$(TAG_PREFIX)$(SHA))
+DESCRIBE=$(shell git describe --tags)
+IMAGE_TAG := $(if $(TAG),$(TAG),$(DESCRIBE))
 IMAGE=$(REPO)/$(PROJECT):$(IMAGE_TAG)
 BUILDER=docker
 BUILDER_ARGS=--no-cache
