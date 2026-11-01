@@ -1348,10 +1348,9 @@ ul.list-bullet li:before {
   background-color: #F8B20E;
 }
 
-.main.container {
+.main.container-xl {
   padding-top: 60px;
   padding-bottom: 60px;
-  max-width: 100%;
 }
 
 .svg-img {
