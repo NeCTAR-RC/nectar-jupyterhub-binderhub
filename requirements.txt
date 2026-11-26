@@ -1,0 +1,4 @@
+# Extra hub packages, pinned so builds are reproducible (Renovate bumps these)
+oslo.messaging==18.4.0
+# 3.x drops send_default_pii; see jupyterhub_config_sentry.py before upgrading
+sentry-sdk==2.77.0

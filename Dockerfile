@@ -5,8 +5,9 @@ USER root
 # oslo.messaging for notebook usage notifications (Ceilometer/Gnocchi)
 # sentry-sdk for error reporting (Sentry/GlitchTip)
 ARG PIP_CACHE_DIR=/tmp/pip-cache
+COPY requirements.txt /tmp/requirements.txt
 RUN --mount=type=cache,target=${PIP_CACHE_DIR} \
-    pip install oslo.messaging sentry-sdk
+    pip install -r /tmp/requirements.txt
 
 USER 1000
 
