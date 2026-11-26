@@ -16,6 +16,15 @@
 
 {% block nav_bar %}
   <section id="navbar" class="sticky-top">
+    <!-- ARDC mega menu (web component plugin; brings its own styling). It stays
+         invisible, with its bar height reserved, until its loader in the footer
+         block draws it. -->
+    <ardc-megamenu
+      id="ardc-menu"
+      data-host="Nectar Research Cloud"
+      data-content-width="wide"
+      style="display: block; opacity: 0; min-height: 20px;"
+    ></ardc-megamenu>
     <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-xl">
         {% block logo %}
@@ -117,7 +126,7 @@
 <!-- ARDC footer (web component plugin; brings its own styling) -->
 <ardc-footer
   class="ardc-footer ardc-custom-component"
-  data-content-width="normal"
+  data-content-width="wide"
   style="opacity: 0;"
   data-show-ardc-logo
 >
@@ -143,6 +152,17 @@
   src="https://ardc.edu.au/wp-content/plugins/ardc-custom-web-components/dist/loaders/footer.min.js"
   defer
   data-no-optimize
+></script>
+
+<!-- Loader for the ARDC mega menu in the nav_bar block. If the script cannot
+     load, onerror hides the placeholder element so no empty band stays above
+     the navbar. -->
+<script
+  id="ardc-megamenu-loader"
+  src="https://ardc.edu.au/wp-content/plugins/ardc-custom-web-components/dist/loaders/megamenu.min.js"
+  defer
+  data-no-optimize
+  onerror="document.getElementById('ardc-menu').style.display='none'"
 ></script>
 {{ super() }}
 {% endblock %}

@@ -1329,6 +1329,68 @@ nav#navbar-bottom #nav-portal .navbar-nav #login_widget .btn:hover {
   box-shadow: inset 0 -4px 0 #8E489B;
 }
 
+/* Page containers use the ARDC Design System widths (1024, 1280 and 1440px)
+   in place of Bootstrap's (960, 1140 and 1320px). The ARDC mega menu and
+   footer are built on the same widths (data-content-width="wide" is 1440px),
+   so the navbar, the page content, the menu and the footer share their left
+   and right edges. The design system has no small or medium width, so
+   Bootstrap's 540px and 720px caps are lifted. */
+@media (min-width: 576px) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: none;
+  }
+}
+@media (min-width: 992px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1400px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 1440px;
+  }
+}
+
+/* From 1200px to 1399px the containers stop at 1280px, but the mega menu and
+   footer at "wide" keep growing with the window up to 1440px. In that range
+   their inline padding takes the container's side space, so their content
+   keeps the container's edges. max() keeps the 12px gutter while the window
+   is narrower than 1280px. */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  ardc-megamenu,
+  ardc-footer {
+    --ardc-padding-inline: max(12px, calc((100% - 1280px) / 2 + 12px));
+  }
+}
+
+/* The mega menu's inline min-height reserves its 20px bar while the loader
+   runs, but below 1200px the menu draws at 0px, so the reserved space would
+   collapse after load and pull the page up. !important beats the inline style. */
+@media (max-width: 1199.98px) {
+  ardc-megamenu {
+    min-height: 0 !important;
+  }
+}
+
 ul.list-bullet {
   list-style: none;
   padding-left: 14px;
